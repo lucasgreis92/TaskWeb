@@ -1,0 +1,9 @@
+br\com\lgr\taksweb\sevice\TaskStatusREST.class
+br\com\lgr\taksweb\model\Tasks.class
+br\com\lgr\taksweb\sevice\TasksFacadeREST.class
+br\com\lgr\taksweb\sevice\AbstractFacade.class
+br\com\lgr\taksweb\model\Status.class
+br\com\lgr\taksweb\sevice\ApplicationConfig.class
+br\com\lgr\taksweb\model\Status_.class
+br\com\lgr\taksweb\sevice\StatusFacadeREST.class
+br\com\lgr\taksweb\model\Tasks_.class

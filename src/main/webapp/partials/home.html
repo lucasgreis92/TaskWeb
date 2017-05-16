@@ -1,0 +1,47 @@
+<div class="jumbotron">
+	<h1 class="text-center">Taks</h1>
+</div>
+
+<p ng-show="mensagem.length" class="alert alert-info">
+	{{mensagem}}
+</p>
+
+<div class="row">
+	<div class="col-md-12">
+		<form>
+			<div class="input-group">
+				<span class="input-group-btn">
+					<a href="/task/new" class="btn btn-primary" type="button">
+						New Task
+					</a>
+				</span>
+				<input class="form-control" placeholder="Filter by task title" 
+				ng-model="filtro">
+			</div>
+			<div class="form-group">
+			<label>Status</label>
+			<select  ng-model="filtroStatus" class="form-control"
+				ng-change="statusChange()" 
+					ng-options="status as status.descricao for status in statusList">
+				<option value="">Filter by status</option>
+			</select>
+		</div>	
+			</form>
+		</div> <!-- fim col-md-12 -->
+	</div> <!-- fim row -->
+	<div ng-show="!tasks.length">
+		No tasks found
+	</div>
+	<div class="row">
+		<meu-painel class="col-md-2 painel-animado" ng-repeat="task in tasks | filter: {titulo:filtro} " titulo="{{task.titulo}}">
+		
+			<p>
+				{{task.descricao}}   	
+			</p>
+
+			<a class="btn btn-primary btn-block" href="/task/edit/{{task.id}}">
+				Edit
+			</a>
+			<meu-botao-perigo nome="Remove" acao="remover(task)">Remover</meu-botao-perigo>
+		</meu-painel>
+	</div>
